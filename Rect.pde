@@ -67,15 +67,15 @@ class Rect {
     fill(0, 0, 255);
     int f = fill;
     pushMatrix();
-      this.fill = #00ffff;
-      rotate(angle);
-      display();
-      this.fill = f;
-      rotate(-angle);
-          ellipse(p.x, p.y, 10, 10);
+    this.fill = #00ffff;
+    rotate(angle);
+    display();
+    this.fill = f;
+    rotate(-angle);
+    ellipse(p.x, p.y, 10, 10);
 
     popMatrix();
-    
+
     return (p.x >= c.x && p.x <= c.x+w && p.y >= c.y && p.y <= c.y+h);
   }
 

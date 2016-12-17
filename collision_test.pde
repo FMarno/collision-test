@@ -1,7 +1,7 @@
 import java.awt.geom.*;
 
 Rect r0;
-
+boolean pause;
 ForceRegistry forceRegistry;
 ContactResolver contactResolver;
 ArrayList<Contact> contacts;
@@ -17,12 +17,14 @@ void setup() {
   contactResolver = new ContactResolver() ;
   contacts = new ArrayList<Contact>();
 
-  r0 = new Rect(100f, 100f, 200f, 200f, 0.1, #ff00ff);
+  r0 = new Rect(300f, 300f, 200f, 200f, 0.1, #ff00ff);
   //r0.applyGravity();
   point = new PVector(0, 0);
 }
 
 void draw() {
+  if (pause)
+    return;
   point.set(mouseX, mouseY);
   background(128);
   fill(#ffff00);
@@ -45,4 +47,9 @@ void draw() {
     fill(255, 0, 0);
   }
   rect(width/2 - 20, height/2 -20, 40, 40);
+}
+
+void keyPressed(){
+ if (key == 'p')
+   pause = !pause;
 }

@@ -5,7 +5,6 @@
 public class Rod extends ContactGenerator {
   // The pair of particles connected by this rod
   Particle p1, p2 ;
-  Line2D.Float line;
   
   // Holds the length of the rod
   float len ; 
@@ -14,7 +13,6 @@ public class Rod extends ContactGenerator {
   public Rod(Particle p1, Particle p2, float len) {
     this.p1 = p1 ;
     this.p2 = p2 ;
-    line = new Line2D.Float(p1.point, p2.point);
     this.len = len ;
   }  
 
